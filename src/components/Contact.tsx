@@ -193,11 +193,11 @@ export function Contact() {
               </p>
             </div>
             <a
-              href="mailto:hello@eduscape.co"
+              href="mailto:eduscapeai@gmail.com"
               className="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold text-primary-700 bg-primary-50 rounded-xl border border-primary-100 hover:bg-primary-100 transition-colors"
             >
               <Mail className="w-3.5 h-3.5" />
-              hello@eduscape.co
+              eduscapeai@gmail.com
             </a>
           </div>
 
