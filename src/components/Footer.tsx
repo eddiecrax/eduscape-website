@@ -85,13 +85,10 @@ export function Footer() {
                 <span className="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1">
                   Official Project Email
                 </span>
-                <a
-                  href="mailto:eduscapeai@gmail.com"
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-sky-300 hover:text-white transition-colors"
-                >
+                <div className="inline-flex items-center gap-2 text-sm font-semibold text-sky-300 select-all">
                   <Mail className="w-4 h-4 text-sky-400 flex-shrink-0" />
-                  eduscapeai@gmail.com
-                </a>
+                  <span>eduscapeai@gmail.com</span>
+                </div>
               </div>
 
               {/* Direct Team Phone Numbers */}
@@ -106,13 +103,10 @@ export function Footer() {
                     <span className="text-xs font-semibold text-slate-200">Ninsiima Doreen</span>
                     <span className="text-[10px] font-medium text-slate-400 bg-slate-800 px-2 py-0.5 rounded-full">Business Lead</span>
                   </div>
-                  <a
-                    href="tel:+256780338687"
-                    className="mt-1 inline-flex items-center gap-2 text-xs font-medium text-sky-300 hover:text-white transition-colors"
-                  >
+                  <div className="mt-1 flex items-center gap-2 text-xs font-semibold text-sky-300 select-all">
                     <PhoneIcon className="w-3.5 h-3.5 text-sky-400 flex-shrink-0" />
-                    +256 780 338687
-                  </a>
+                    <span>+256 780 338687</span>
+                  </div>
                 </div>
 
                 <div className="h-px bg-slate-800" />
@@ -123,13 +117,10 @@ export function Footer() {
                     <span className="text-xs font-semibold text-slate-200">Dr. Richard Kimera</span>
                     <span className="text-[10px] font-medium text-slate-400 bg-slate-800 px-2 py-0.5 rounded-full">Academic Supervisor</span>
                   </div>
-                  <a
-                    href="tel:+256774437989"
-                    className="mt-1 inline-flex items-center gap-2 text-xs font-medium text-sky-300 hover:text-white transition-colors"
-                  >
+                  <div className="mt-1 flex items-center gap-2 text-xs font-semibold text-sky-300 select-all">
                     <PhoneIcon className="w-3.5 h-3.5 text-sky-400 flex-shrink-0" />
-                    +256 774 437989
-                  </a>
+                    <span>+256 774 437989</span>
+                  </div>
                 </div>
               </div>
 
@@ -151,7 +142,7 @@ export function Footer() {
             &copy; 2026 EduScape AI. All rights reserved.
           </p>
           <p className="text-center sm:text-right">
-            MUST FCI &middot; CITT Software Incubation Unit &middot; Aligned with Uganda NCHE CBE 2027/28 Mandate
+            MUST FCI &middot; CITT Software Incubation Unit &middot; Preparing for Uganda NCHE CBE 2027/28 Alignment
           </p>
         </div>
       </div>
