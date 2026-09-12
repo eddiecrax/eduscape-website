@@ -40,11 +40,14 @@ export function Footer() {
                 EduScape AI
               </span>
             </div>
-            <p className="text-sm text-slate-400 leading-relaxed max-w-md">
-              A governed CBE AI-powered tutoring and learning companion for universities implementing Competency-Based Education. Built at MUST, incubated at CITT.
+            <p className="text-sm text-slate-300/90 leading-relaxed max-w-md">
+              A governed, LMS-integrated AI tutoring and learning companion engineered for universities implementing Competency-Based Education (CBE). Powered by Hierarchical Adaptive Retrieval (HA-RAG), EduScape anchors responses strictly to verified institutional courseware and rubrics to eliminate hallucinations and safeguard academic integrity.
             </p>
-            <p className="mt-4 text-xs font-semibold text-sky-400">
-              Supervised by Dr. Richard Kimera, Department of Computer Science, MUST
+            <p className="mt-3 text-xs text-slate-400 leading-relaxed max-w-md">
+              Developed at Mbarara University of Science and Technology (MUST) within the Faculty of Computing &amp; Informatics, and incubated at the CITT Software Incubation Unit.
+            </p>
+            <p className="mt-3 text-xs font-semibold text-sky-400">
+              Supervised by Dr. Richard Kimera &middot; Department of Computer Science, MUST
             </p>
           </div>
 
