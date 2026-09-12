@@ -83,6 +83,13 @@ export function Contact() {
       const data = await response.json();
       if (data.success) {
         setSubmitted(true);
+        setForm({
+          name: '',
+          email: '',
+          organization: '',
+          track: selectedTrack,
+          message: '',
+        });
       } else {
         setErrorMessage(data.message || 'Failed to submit inquiry. Please try again.');
       }
@@ -91,6 +98,18 @@ export function Contact() {
     } finally {
       setIsSubmitting(false);
     }
+  };
+
+  const handleReset = () => {
+    setForm({
+      name: '',
+      email: '',
+      organization: '',
+      track: selectedTrack,
+      message: '',
+    });
+    setErrorMessage(null);
+    setSubmitted(false);
   };
 
   return (
@@ -192,8 +211,9 @@ export function Contact() {
                 Thank you for your interest in partnering with EduScape AI. Our team will review your message and respond directly via email.
               </p>
               <button
-                onClick={() => setSubmitted(false)}
-                className="mt-6 text-sm font-semibold text-primary-700 hover:text-primary-800"
+                type="button"
+                onClick={handleReset}
+                className="mt-6 inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-primary-200 bg-primary-50 text-sm font-semibold text-primary-700 hover:bg-primary-100 transition-colors"
               >
                 Send another message
               </button>
