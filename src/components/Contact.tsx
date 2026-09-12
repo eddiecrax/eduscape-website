@@ -40,6 +40,7 @@ export function Contact() {
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [formKey, setFormKey] = useState(0);
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -109,6 +110,7 @@ export function Contact() {
       message: '',
     });
     setErrorMessage(null);
+    setFormKey((k) => k + 1);
     setSubmitted(false);
   };
 
@@ -219,7 +221,7 @@ export function Contact() {
               </button>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form key={formKey} autoComplete="off" onSubmit={handleSubmit} className="space-y-4">
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
@@ -228,6 +230,7 @@ export function Contact() {
                   <input
                     type="text"
                     required
+                    autoComplete="off"
                     value={form.name}
                     onChange={(e) => setForm({ ...form, name: e.target.value })}
                     placeholder="Full name"
@@ -242,6 +245,7 @@ export function Contact() {
                   <input
                     type="email"
                     required
+                    autoComplete="off"
                     value={form.email}
                     onChange={(e) => setForm({ ...form, email: e.target.value })}
                     placeholder="you@institution.org"
@@ -258,6 +262,7 @@ export function Contact() {
                   <input
                     type="text"
                     required
+                    autoComplete="off"
                     value={form.organization}
                     onChange={(e) => setForm({ ...form, organization: e.target.value })}
                     placeholder="University, Foundation, or Company"
@@ -288,6 +293,7 @@ export function Contact() {
                 <textarea
                   required
                   rows={4}
+                  autoComplete="off"
                   value={form.message}
                   onChange={(e) => setForm({ ...form, message: e.target.value })}
                   placeholder="Share details about your fund, university cohort, or industry focus..."
