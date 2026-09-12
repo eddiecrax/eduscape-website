@@ -1,5 +1,5 @@
 import { useScrollReveal } from '@/hooks/useScrollReveal';
-import { CheckCircle, ShieldCheck, Zap, Users, Award, Server } from 'lucide-react';
+import { CheckCircle, ShieldCheck, Zap, Users, Award, Server, Lock } from 'lucide-react';
 
 const milestones = [
   {
@@ -33,6 +33,12 @@ const milestones = [
     tag: 'Faculty Approval',
   },
   {
+    icon: Lock,
+    title: 'MUST ICT Conditional Support',
+    desc: 'Two MUST ICT Services staff evaluated the architecture and expressed conditional support subject to an integration audit.',
+    tag: 'Technical Feasibility',
+  },
+  {
     icon: Server,
     title: 'MUST ICT Moodle Partnership',
     desc: 'MUST ICT Services verbally confirmed willingness to provide an isolated university Moodle sandbox environment for pilot testing.',
@@ -52,24 +58,24 @@ export function Traction() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-semibold mb-4 shadow-sm">
             <CheckCircle className="w-3.5 h-3.5 text-emerald-600" />
-            Verified Progress & Validation
+            Feasibility & Desirability Signals
           </div>
           <h2 className={`text-3xl sm:text-4xl lg:text-[2.75rem] font-display font-extrabold text-slate-900 text-balance leading-[1.3] sm:leading-[1.32] ${inView ? 'animate-fade-up' : 'reveal'}`}>
             Where we are now.
           </h2>
           <p className={`mt-4 text-base sm:text-lg text-slate-600 leading-relaxed text-pretty ${inView ? 'animate-fade-up' : 'reveal'}`} style={{ animationDelay: '0.1s' }}>
-            EduScape AI is an advanced working prototype, built at MUST during the 2025/2026 academic year. Here is what has been done and what has been confirmed.
+            EduScape AI is an advanced working prototype, built at MUST during the 2025/2026 academic year. Here are the confirmed feasibility and validation signals heading into pilot testing.
           </p>
         </div>
 
-        {/* 6 Milestone Tiles */}
+        {/* 7 Milestone Tiles */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {milestones.map((m, i) => (
             <div
               key={m.title}
               className={`bg-white rounded-2xl p-6 border border-slate-200/80 shadow-md shadow-slate-200/40 hover:shadow-xl hover:border-emerald-300 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between ${
-                inView ? 'animate-fade-up' : 'reveal'
-              }`}
+                i === 6 ? 'sm:col-span-2 lg:col-span-1 lg:col-start-2' : ''
+              } ${inView ? 'animate-fade-up' : 'reveal'}`}
               style={{ animationDelay: `${0.12 + i * 0.08}s` }}
             >
               <div>
@@ -92,10 +98,17 @@ export function Traction() {
 
               <div className="mt-5 pt-3.5 border-t border-slate-100 flex items-center gap-2 text-xs font-semibold text-emerald-600">
                 <CheckCircle className="w-3.5 h-3.5 flex-shrink-0" />
-                <span>Verified Milestone</span>
+                <span>Confirmed Signal</span>
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Verbatim Prototype Scope Note */}
+        <div className="mt-12 text-center max-w-2xl mx-auto">
+          <p className="text-xs sm:text-sm text-slate-500 leading-relaxed italic">
+            * Note: These are promising feasibility and desirability signals from prototype testing, not proof of institution-wide impact. The proposed controlled pilot will produce formal quality, security, usability, and operating-cost evidence.
+          </p>
         </div>
       </div>
     </section>
