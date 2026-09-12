@@ -1,0 +1,129 @@
+/* Base styles */
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+/* Prevent default browser focus rectangles on links and buttons */
+a, button {
+  -webkit-tap-highlight-color: transparent;
+}
+a:focus,
+a:focus-visible,
+button:focus,
+button:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #0f172a;
+  background-color: #ffffff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  line-height: 1.32;
+  letter-spacing: -0.015em;
+}
+
+h1 {
+  line-height: 1.24;
+}
+
+h2 {
+  line-height: 1.32;
+}
+
+h3 {
+  line-height: 1.36;
+}
+
+h4, h5, h6 {
+  line-height: 1.4;
+}
+
+.text-balance { text-wrap: balance; }
+.text-pretty   { text-wrap: pretty; }
+
+.reveal { opacity: 0; }
+.reveal.in-view { animation: fadeUp 0.7s ease-out forwards; }
+
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgba(11, 79, 145, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(11, 79, 145, 0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.bg-dots {
+  background-image: radial-gradient(rgba(11, 79, 145, 0.12) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #0b4f91 0%, #1764a3 50%, #5ea8d5 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.shimmer-border {
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #fbbf24 100%);
+  background-size: 200% 200%;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+.card-hover {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.3s ease;
+}
+.card-hover:hover { transform: translateY(-4px); }
+
+.scrollbar-hidden::-webkit-scrollbar { display: none; }
+.scrollbar-hidden { -ms-overflow-style: none; scrollbar-width: none; }
+
+.bg-grid-dark {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.bg-dots-dark {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.10) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #1764a3; border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: #0b4f91; }
+::selection { background: #5ea8d5; color: #ffffff; }
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1764a3;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0b4f91;
+}
+
+::selection {
+  background: #5ea8d5;
+  color: #ffffff;
+}

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EduScape AI — CBE AI Tutoring for Ugandan Universities</title>
+    <meta name="description" content="A governed, LMS-integrated intelligence layer that connects lecturer-defined competencies and approved course materials to give students source-anchored answers." />
+    <meta property="og:title" content="EduScape AI — CBE AI Tutoring" />
+    <meta property="og:description" content="The AI tutoring layer built for how Competency-Based Education actually works. Built at MUST, incubated at CITT." />
+    <meta property="og:image" content="https://bolt.new/static/og_default.png" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://bolt.new/static/og_default.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                50: '#eef6fc', 100: '#dcecf8', 200: '#b9d9ef', 300: '#8bc1e3',
+                400: '#5ea8d5', 500: '#2f7fbd', 600: '#1764a3', 700: '#0b4f91',
+                800: '#0a3d73', 900: '#092f59', 950: '#061d37',
+              },
+              accent: {
+                50: '#fffbeb', 100: '#fef3c7', 200: '#fde68a', 300: '#fcd34d',
+                400: '#fbbf24', 500: '#f59e0b', 600: '#d97706', 700: '#b45309',
+                800: '#92400e', 900: '#78350f',
+              },
+            },
+            fontFamily: {
+              sans: ['Inter', 'system-ui', 'sans-serif'],
+              display: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.6s ease-out forwards',
+              'fade-up': 'fadeUp 0.7s ease-out forwards',
+              'fade-down': 'fadeDown 0.7s ease-out forwards',
+              'scale-in': 'scaleIn 0.6s ease-out forwards',
+              'float': 'float 6s ease-in-out infinite',
+              'pulse-slow': 'pulseSlow 4s ease-in-out infinite',
+              'marquee': 'marquee 30s linear infinite',
+              'shimmer': 'shimmer 3s ease-in-out infinite',
+              'blink': 'blink 1s step-end infinite',
+            },
+            keyframes: {
+              fadeIn: { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
+              fadeUp: { '0%': { opacity: '0', transform: 'translateY(24px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
+              fadeDown: { '0%': { opacity: '0', transform: 'translateY(-24px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
+              scaleIn: { '0%': { opacity: '0', transform: 'scale(0.95)' }, '100%': { opacity: '1', transform: 'scale(1)' } },
+              float: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-12px)' } },
+              pulseSlow: { '0%, 100%': { opacity: '0.5' }, '50%': { opacity: '0.15' } },
+              marquee: { '0%': { transform: 'translateX(0)' }, '100%': { transform: 'translateX(-50%)' } },
+              shimmer: { '0%, 100%': { backgroundPosition: '0% 50%' }, '50%': { backgroundPosition: '100% 50%' } },
+              blink: { '0%, 100%': { opacity: '1' }, '50%': { opacity: '0' } },
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
