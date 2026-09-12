@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Mail, CheckCircle2, Send, Award, BookOpen, Users, ArrowRight } from 'lucide-react';
+import { Mail, CheckCircle2, Send, Award, BookOpen, Users, ArrowRight, AlertCircle } from 'lucide-react';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 type PartnerTrack = 'grants' | 'universities' | 'corporate';
@@ -38,6 +38,8 @@ export function Contact() {
   const { ref, inView } = useScrollReveal();
   const [selectedTrack, setSelectedTrack] = useState<PartnerTrack>('grants');
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -52,9 +54,43 @@ export function Contact() {
     document.getElementById('partner-form')?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+    setErrorMessage(null);
+
+    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || '024c9a74-5b14-4602-a282-4c10b1cc717d';
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: accessKey,
+          name: form.name,
+          email: form.email,
+          organization: form.organization,
+          category: partnerTracks.find((t) => t.id === form.track)?.title || form.track,
+          message: form.message,
+          subject: `EduScape Partnership Inquiry: ${form.name} (${form.organization})`,
+          from_name: 'EduScape AI Website',
+        }),
+      });
+
+      const data = await response.json();
+      if (data.success) {
+        setSubmitted(true);
+      } else {
+        setErrorMessage(data.message || 'Failed to submit inquiry. Please try again.');
+      }
+    } catch {
+      setErrorMessage('Network error occurred. Please try again or email hello@eduscape.co directly.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -239,12 +275,32 @@ export function Contact() {
                 />
               </div>
 
+              {errorMessage && (
+                <div className="flex items-center gap-2 p-3.5 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 text-xs font-medium">
+                  <AlertCircle className="w-4 h-4 flex-shrink-0 text-rose-600" />
+                  <span>{errorMessage}</span>
+                </div>
+              )}
+
               <button
                 type="submit"
-                className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold text-white bg-gradient-to-r from-primary-600 to-primary-700 rounded-xl shadow-md shadow-primary-600/25 hover:shadow-lg hover:shadow-primary-600/30 hover:scale-[1.01] transition-all duration-200"
+                disabled={isSubmitting}
+                className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold text-white bg-gradient-to-r from-primary-600 to-primary-700 rounded-xl shadow-md shadow-primary-600/25 hover:shadow-lg hover:shadow-primary-600/30 hover:scale-[1.01] transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
               >
-                Submit Partnership Inquiry
-                <Send className="w-4 h-4" />
+                {isSubmitting ? (
+                  <>
+                    <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    Submitting Inquiry...
+                  </>
+                ) : (
+                  <>
+                    Submit Partnership Inquiry
+                    <Send className="w-4 h-4" />
+                  </>
+                )}
               </button>
             </form>
           )}
