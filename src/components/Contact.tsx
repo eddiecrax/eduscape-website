@@ -80,6 +80,7 @@ export function Contact() {
           access_key: accessKey,
           name: form.name,
           email: form.email,
+          replyto: form.email,
           organization: form.organization,
           category: partnerTracks.find((t) => t.id === form.track)?.title || form.track,
           message: form.message,
