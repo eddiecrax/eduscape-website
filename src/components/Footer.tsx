@@ -85,7 +85,7 @@ export function Footer() {
                 </span>
                 <div className="inline-flex items-center gap-2 text-sm sm:text-base font-semibold text-white select-all">
                   <Mail className="w-4 h-4 text-sky-400 flex-shrink-0" />
-                  <span>contact@eduscape.co</span>
+                  <span>eduscapeai@gmail.com</span>
                 </div>
               </div>
 

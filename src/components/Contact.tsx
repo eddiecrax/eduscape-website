@@ -102,7 +102,7 @@ export function Contact() {
         setErrorMessage(data.message || 'Failed to submit inquiry. Please try again.');
       }
     } catch {
-      setErrorMessage('Network error occurred. Please try again or email hello@eduscape.co directly.');
+      setErrorMessage('Network error occurred. Please try again or email eduscapeai@gmail.com directly.');
     } finally {
       setIsSubmitting(false);
     }
@@ -201,7 +201,7 @@ export function Contact() {
             </div>
             <div className="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold text-primary-700 bg-primary-50 rounded-xl border border-primary-100 select-all">
               <Mail className="w-3.5 h-3.5 text-primary-600" />
-              <span>contact@eduscape.co</span>
+              <span>eduscapeai@gmail.com</span>
             </div>
           </div>
 
