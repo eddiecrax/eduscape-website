@@ -46,13 +46,13 @@ export function VideoShowcase() {
         <div className="text-center max-w-2xl mx-auto mb-10">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary-50 border border-primary-200 text-primary-700 text-xs font-semibold mb-5">
             <Presentation className="w-3.5 h-3.5" />
-            Pitch Deck
+            Executive Pitch Deck
           </div>
           <h2 className={`text-3xl sm:text-4xl font-display font-extrabold text-slate-900 text-balance leading-[1.3] sm:leading-[1.32] ${inView ? 'animate-fade-up' : 'reveal'}`}>
-            See EduScape AI in action
+            The EduScape AI Pitch Deck
           </h2>
           <p className={`mt-4 text-base text-slate-600 leading-relaxed text-pretty ${inView ? 'animate-fade-up' : 'reveal'}`} style={{ animationDelay: '0.1s' }}>
-            A walkthrough of the platform — from CBE roadmap creation to source-anchored student responses.
+            A 1-minute executive overview outlining the higher education CBE challenge, institutional friction, and how EduScape AI delivers governed academic support.
           </p>
         </div>
 
@@ -84,7 +84,7 @@ export function VideoShowcase() {
                       EduScape AI — Pitch Deck Presentation
                     </p>
                     <p className="mt-2 text-sm text-blue-100/90 font-medium">
-                      Click to watch the full video walkthrough
+                      Click to watch the 1-minute problem &amp; solution overview
                     </p>
                   </div>
                 </div>
@@ -150,12 +150,12 @@ export function VideoShowcase() {
                 <Presentation className="w-5 h-5 text-primary-600" />
               </div>
               <div>
-                <p className="text-sm font-semibold text-slate-900">Pitch Deck Presentation</p>
-                <p className="text-xs text-slate-500">Official platform vision & Competency-Based Education model</p>
+                <p className="text-sm font-semibold text-slate-900">Executive Pitch Deck</p>
+                <p className="text-xs text-slate-500">Problem framing, institutional CBE challenges, and governed solution architecture</p>
               </div>
             </div>
             <div className="flex items-center gap-2 text-xs text-slate-500">
-              <span className="px-2.5 py-1 rounded-full bg-slate-100 border border-slate-200 font-medium text-slate-700">Official Video</span>
+              <span className="px-2.5 py-1 rounded-full bg-slate-100 border border-slate-200 font-medium text-slate-700">Problem &amp; Solution</span>
               <span className="px-2.5 py-1 rounded-full bg-primary-50 border border-primary-200 font-medium text-primary-700">1:00 min</span>
             </div>
           </div>
