@@ -37,7 +37,7 @@ export function News() {
                 className="group relative min-h-[390px] rounded-2xl overflow-hidden border border-white/10 bg-white/5"
                 style={{ opacity: 0, animation: inView ? `fadeUp .6s ease-out ${i * .12}s forwards` : 'none' }}
               >
-                <img src={story.image} alt="" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+                <img src={story.image} alt={story.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/90 to-slate-950/30" />
                 <div className="relative h-full flex flex-col justify-end p-5 sm:p-6">
                   <div className="flex items-center gap-2 text-xs mb-3.5 flex-wrap">
