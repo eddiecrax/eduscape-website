@@ -46,13 +46,13 @@ export function VideoShowcase() {
         <div className="text-center max-w-2xl mx-auto mb-10">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary-50 border border-primary-200 text-primary-700 text-xs font-semibold mb-5">
             <Presentation className="w-3.5 h-3.5" />
-            Executive Pitch Deck
+            Product Walkthrough
           </div>
           <h2 className={`text-3xl sm:text-4xl font-display font-extrabold text-slate-900 text-balance leading-[1.3] sm:leading-[1.32] ${inView ? 'animate-fade-up' : 'reveal'}`}>
-            The EduScape AI Pitch Deck
+            See EduScape in action
           </h2>
           <p className={`mt-4 text-base text-slate-600 leading-relaxed text-pretty ${inView ? 'animate-fade-up' : 'reveal'}`} style={{ animationDelay: '0.1s' }}>
-            A 1-minute executive overview outlining the higher education CBE challenge, institutional friction, and how EduScape AI delivers governed academic support.
+            A product walk-through showing how EduScape anchors student queries to lecturer courseware, delivers CBE-aligned responses, and respects institutional boundaries.
           </p>
         </div>
 
@@ -68,7 +68,7 @@ export function VideoShowcase() {
                 <div className="aspect-video relative overflow-hidden bg-slate-950 flex items-center justify-center">
                   <img
                     src="/pitch-deck-poster.jpg"
-                    alt="EduScape AI Pitch Deck Preview"
+                    alt="EduScape AI Product Demo Preview"
                     className="absolute inset-0 w-full h-full object-cover brightness-[0.75] transition-transform duration-500 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/40 to-transparent" />
@@ -81,10 +81,10 @@ export function VideoShowcase() {
                       </div>
                     </div>
                     <p className="text-white font-display font-bold text-lg sm:text-2xl drop-shadow-md">
-                      EduScape AI — Pitch Deck Presentation
+                      EduScape AI — Product Walkthrough
                     </p>
                     <p className="mt-2 text-sm text-blue-100/90 font-medium">
-                      Click to watch the 1-minute problem &amp; solution overview
+                      Click to watch EduScape in action
                     </p>
                   </div>
                 </div>
@@ -92,7 +92,7 @@ export function VideoShowcase() {
                 {/* Bottom info bar */}
                 <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent flex items-center gap-3 text-white/90 z-10">
                   <Clock className="w-4 h-4 text-sky-400" />
-                  <span className="text-xs font-medium">Official Pitch Deck (1:00 min)</span>
+                  <span className="text-xs font-medium">Product Overview (1:00 min)</span>
                 </div>
               </>
             )}
@@ -138,7 +138,7 @@ export function VideoShowcase() {
               <button
                 onClick={handlePlay}
                 className="absolute inset-0 z-20 cursor-pointer"
-                aria-label="Play pitch deck video"
+                aria-label="Play product walkthrough video"
               />
             )}
           </div>
@@ -150,12 +150,12 @@ export function VideoShowcase() {
                 <Presentation className="w-5 h-5 text-primary-600" />
               </div>
               <div>
-                <p className="text-sm font-semibold text-slate-900">Executive Pitch Deck</p>
-                <p className="text-xs text-slate-500">Problem framing, institutional CBE challenges, and governed solution architecture</p>
+                <p className="text-sm font-semibold text-slate-900">Product Demonstration</p>
+                <p className="text-xs text-slate-500">Course-grounded AI tutoring, CBE roadmap alignment, and source attribution in action</p>
               </div>
             </div>
             <div className="flex items-center gap-2 text-xs text-slate-500">
-              <span className="px-2.5 py-1 rounded-full bg-slate-100 border border-slate-200 font-medium text-slate-700">Problem &amp; Solution</span>
+              <span className="px-2.5 py-1 rounded-full bg-slate-100 border border-slate-200 font-medium text-slate-700">Product Walkthrough</span>
               <span className="px-2.5 py-1 rounded-full bg-primary-50 border border-primary-200 font-medium text-primary-700">1:00 min</span>
             </div>
           </div>

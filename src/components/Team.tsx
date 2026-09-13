@@ -19,14 +19,10 @@ export function Team() {
             The Team
           </p>
           <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-display font-extrabold text-slate-900 text-balance leading-[1.3] sm:leading-[1.32]">
-            Built at MUST. Backed by CITT. Already working.
+            The team building EduScape.
           </h2>
           <p className="mt-5 text-base text-slate-600 leading-relaxed text-pretty">
-            EduScape is an advanced working prototype — not an untested idea.
-            In early sessions with 12 FCI students and four lecturers, all 12
-            students reported that source-anchored answers increased trust;
-            three lecturers said they would approve the system if lecturers
-            retained exclusive control over content ingestion.
+            A multidisciplinary team of engineers, business developers, and academic researchers at Mbarara University of Science and Technology.
           </p>
         </div>
 

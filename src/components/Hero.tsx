@@ -53,7 +53,7 @@ export function Hero() {
           <div className="animate-fade-up">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary-50 border border-primary-200 text-primary-700 text-xs font-semibold mb-6">
               <span className="w-1.5 h-1.5 rounded-full bg-primary-500 animate-pulse" />
-              Uganda · Competency-Based Higher Education · MUST CITT
+              For universities implementing CBE
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-[3.25rem] font-display font-extrabold text-slate-900 text-balance leading-[1.25] sm:leading-[1.26]">
@@ -62,7 +62,7 @@ export function Hero() {
             </h1>
 
             <p className="mt-5 text-base sm:text-lg text-slate-600 text-pretty leading-relaxed max-w-xl">
-              Uganda&apos;s universities must align all programmes with Competency-Based Education by 2027/2028. Your LMS stores the materials. EduScape makes them intelligent.
+              Your course materials. Your competencies. Students getting answers you&apos;d actually approve — grounded in what you taught, not what&apos;s on the internet.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-3">

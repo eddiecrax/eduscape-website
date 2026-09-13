@@ -26,9 +26,9 @@ function App() {
         <Features />
         <WhatItDoes />
         <Traction />
-        <News />
         <Pricing />
         <Team />
+        <News />
         <Contact />
       </main>
       <Footer />

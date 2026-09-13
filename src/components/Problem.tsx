@@ -1,5 +1,6 @@
+import { useState } from 'react';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
-import { Database, Globe, Sparkles, BarChart, ArrowRight } from 'lucide-react';
+import { Database, Globe, Sparkles, BarChart, ArrowRight, X } from 'lucide-react';
 
 const studyMetrics = [
   { label: 'Anytime access to resources', score: '2.88', max: 5 },
@@ -10,6 +11,7 @@ const studyMetrics = [
 
 export function Problem() {
   const { ref, inView } = useScrollReveal();
+  const [showResearchModal, setShowResearchModal] = useState(false);
 
   return (
     <section id="problem" className="relative py-20 lg:py-28 overflow-hidden bg-slate-50/60 border-b border-slate-200/60">
@@ -32,7 +34,7 @@ export function Problem() {
         </div>
 
         {/* Three Columns Comparison */}
-        <div className="grid md:grid-cols-3 gap-6 lg:gap-8 mb-14">
+        <div className="grid md:grid-cols-3 gap-6 lg:gap-8 mb-12">
           {/* Column 1: What the LMS does */}
           <div
             className={`bg-white rounded-2xl p-7 border border-slate-200/90 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between ${
@@ -113,40 +115,62 @@ export function Problem() {
           </div>
         </div>
 
-        {/* MUST Evidence Callout Box */}
+        {/* Human Reality Statement */}
         <div
-          className={`bg-white rounded-2xl p-6 sm:p-8 border border-slate-200/90 shadow-lg shadow-slate-200/40 ${
+          className={`bg-white rounded-2xl p-6 sm:p-8 border border-slate-200/90 shadow-md shadow-slate-200/50 text-center ${
             inView ? 'animate-fade-up' : 'reveal'
           }`}
           style={{ animationDelay: '0.4s' }}
         >
-          <div className="grid lg:grid-cols-12 gap-8 items-center">
-            <div className="lg:col-span-7">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-50 border border-primary-200 text-primary-700 text-xs font-bold mb-3">
-                <BarChart className="w-3.5 h-3.5" />
-                The MUST Empirical Evidence
+          <p className="text-lg sm:text-2xl font-display font-bold text-slate-900 leading-snug max-w-3xl mx-auto">
+            Your students are using ChatGPT to answer questions about your course. It doesn&apos;t know your materials.{' '}
+            <span className="text-primary-700">EduScape does.</span>
+          </p>
+          <div className="mt-4 pt-4 border-t border-slate-100 flex items-center justify-center">
+            <button
+              type="button"
+              onClick={() => setShowResearchModal(true)}
+              className="inline-flex items-center gap-2 text-xs font-semibold text-slate-500 hover:text-primary-700 transition-colors"
+            >
+              <BarChart className="w-3.5 h-3.5 text-primary-600" />
+              <span>Review empirical study data from MUST classrooms (237 respondents)</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Research & Empirical Study Modal */}
+      {showResearchModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-sm animate-fade-in">
+          <div className="relative w-full max-w-2xl bg-white rounded-2xl shadow-2xl border border-slate-200 p-6 sm:p-8 overflow-hidden">
+            <div className="flex items-start justify-between mb-4">
+              <div>
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-50 border border-primary-200 text-primary-700 text-xs font-bold mb-2">
+                  <BarChart className="w-3.5 h-3.5" />
+                  MUST Empirical Study Findings
+                </div>
+                <h3 className="text-xl font-display font-bold text-slate-900">
+                  Measured gaps from real Ugandan higher education classrooms
+                </h3>
               </div>
-              <h4 className="text-lg sm:text-xl font-display font-bold text-slate-900 leading-snug">
-                Measured gaps from real Ugandan higher education classrooms
-              </h4>
-              <p className="mt-3 text-sm text-slate-600 leading-relaxed">
-                A 2025 study at MUST with <strong>237 respondents</strong> found that anytime access (2.88/5), outcome-aligned content development (2.77), timely availability (2.74) and sufficiency of information for tasks (2.52) were the weakest dimensions of the current VLE experience. <strong>EduScape addresses all four.</strong>
-              </p>
-              <div className="mt-5">
-                <a
-                  href="#solution"
-                  className="inline-flex items-center gap-2 text-xs font-bold text-primary-700 hover:text-primary-800 transition-colors"
-                >
-                  Explore the 3-layer architecture addressing these gaps
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </a>
-              </div>
+              <button
+                type="button"
+                onClick={() => setShowResearchModal(false)}
+                className="p-1.5 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors"
+                aria-label="Close modal"
+              >
+                <X className="w-5 h-5" />
+              </button>
             </div>
 
-            {/* Score Bars */}
-            <div className="lg:col-span-5 bg-slate-50/80 rounded-xl p-5 border border-slate-200/70 space-y-3.5">
+            <p className="text-sm text-slate-600 leading-relaxed mb-6">
+              A 2025 study conducted at Mbarara University of Science and Technology (MUST) with <strong>237 respondents</strong> evaluated the current Virtual Learning Environment (VLE) experience across higher education programmes. Anytime access, outcome alignment, and information sufficiency were identified as primary friction points:
+            </p>
+
+            <div className="bg-slate-50 rounded-xl p-5 border border-slate-200/80 space-y-3.5 mb-6">
               <p className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">
-                Weakest VLE Dimensions (Mean / 5.0)
+                Weakest VLE Dimensions (Mean Score / 5.0)
               </p>
               {studyMetrics.map((item) => {
                 const val = parseFloat(item.score);
@@ -155,21 +179,34 @@ export function Problem() {
                   <div key={item.label}>
                     <div className="flex items-center justify-between text-xs mb-1">
                       <span className="text-slate-700 font-medium">{item.label}</span>
-                      <span className="font-bold text-slate-900">{item.score}/5.0</span>
+                      <span className="font-bold text-slate-900">{item.score} / 5.0</span>
                     </div>
                     <div className="h-2 bg-slate-200/80 rounded-full overflow-hidden">
                       <div
-                        className="h-full rounded-full bg-gradient-to-r from-amber-400 to-amber-500 transition-all duration-1000"
-                        style={{ width: inView ? `${pct}%` : '0%' }}
+                        className="h-full rounded-full bg-gradient-to-r from-amber-400 to-amber-500"
+                        style={{ width: `${pct}%` }}
                       />
                     </div>
                   </div>
                 );
               })}
             </div>
+
+            <div className="flex items-center justify-between pt-4 border-t border-slate-100">
+              <span className="text-xs text-slate-400">
+                Source: MUST FCI &amp; CITT Academic Baseline Survey (2025)
+              </span>
+              <button
+                type="button"
+                onClick={() => setShowResearchModal(false)}
+                className="px-4 py-2 rounded-xl bg-slate-900 text-white text-xs font-semibold hover:bg-slate-800 transition-colors"
+              >
+                Close Data View
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </section>
   );
 }

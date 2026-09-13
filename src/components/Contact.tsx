@@ -11,8 +11,8 @@ const partnerTracks = [
     tag: 'Funding & Applied Research',
     icon: Award,
     borderAccent: 'border-primary-200 hover:border-primary-400',
-    desc: 'We are seeking funding partners to support a structured six-month institutional pilot covering product hardening, evaluation with 100 students and six lecturers across two MUST faculties, usability benchmarking, and buyer validation. If your fund supports edtech innovation, applied AI, or CBE implementation in African higher education, we want to talk.',
-    cta: 'Contact us',
+    desc: 'EduScape is seeking funding partners for institutional pilot deployment. Request our concept document for full technical and financial details.',
+    cta: 'Request concept document',
   },
   {
     id: 'universities' as PartnerTrack,
@@ -51,7 +51,14 @@ export function Contact() {
 
   const handleSelectTrack = (trackId: PartnerTrack) => {
     setSelectedTrack(trackId);
-    setForm((prev) => ({ ...prev, track: trackId }));
+    setForm((prev) => ({
+      ...prev,
+      track: trackId,
+      message:
+        trackId === 'grants' && !prev.message
+          ? 'I would like to request the EduScape AI institutional pilot concept document for technical and financial review.'
+          : prev.message,
+    }));
     document.getElementById('partner-form')?.scrollIntoView({ behavior: 'smooth' });
   };
 
@@ -194,7 +201,7 @@ export function Contact() {
             </div>
             <div className="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold text-primary-700 bg-primary-50 rounded-xl border border-primary-100 select-all">
               <Mail className="w-3.5 h-3.5 text-primary-600" />
-              <span>eduscapeai@gmail.com</span>
+              <span>contact@eduscape.co</span>
             </div>
           </div>
 

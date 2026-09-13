@@ -55,7 +55,7 @@ export const tiers: PricingTier[] = [
 ];
 
 export const pilotExample: string =
-  'Worked Example — A 100-student, 6-lecturer pilot at MUST: approximately UGX 10.87 million in year one including onboarding. Annual recurring cost approximately UGX 2.4 million from year two — the grant funds the build, revenue sustains it.';
+  'Worked Example — A 100-student, 6-lecturer pilot at MUST: approximately UGX 10.87 million in year one including onboarding. Annual recurring costs of approximately UGX 2.4 million from year two make EduScape sustainable at pilot scale.';
 
 export const pricingNote: string =
   'Planning rate: UGX 3,625 per US$. All onboarding includes LMS integration, CBE roadmap configuration, staff training, security audit and acceptance testing.';

@@ -102,7 +102,7 @@ export function Features() {
             Everything missing from your LMS — without replacing it.
           </h2>
           <p className="mt-4 text-base text-slate-600 leading-relaxed text-pretty">
-            A comprehensive architectural comparison across existing higher-education solutions and general AI tools.
+            We checked what else exists. Nothing does all of this.
           </p>
         </div>
 

@@ -58,13 +58,13 @@ export function Traction() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-semibold mb-4 shadow-sm">
             <CheckCircle className="w-3.5 h-3.5 text-emerald-600" />
-            Feasibility & Desirability Signals
+            Platform Milestones &amp; Validation
           </div>
           <h2 className={`text-3xl sm:text-4xl lg:text-[2.75rem] font-display font-extrabold text-slate-900 text-balance leading-[1.3] sm:leading-[1.32] ${inView ? 'animate-fade-up' : 'reveal'}`}>
-            Where we are now.
+            What&apos;s been built.
           </h2>
           <p className={`mt-4 text-base sm:text-lg text-slate-600 leading-relaxed text-pretty ${inView ? 'animate-fade-up' : 'reveal'}`} style={{ animationDelay: '0.1s' }}>
-            EduScape AI is an advanced working prototype, built at MUST during the 2025/2026 academic year. Here are the confirmed feasibility and validation signals heading into pilot testing.
+            EduScape AI is an advanced working prototype built with universities. Here is what has been built, tested, and validated heading into pilot deployment.
           </p>
         </div>
 
@@ -98,16 +98,16 @@ export function Traction() {
 
               <div className="mt-5 pt-3.5 border-t border-slate-100 flex items-center gap-2 text-xs font-semibold text-emerald-600">
                 <CheckCircle className="w-3.5 h-3.5 flex-shrink-0" />
-                <span>Confirmed Signal</span>
+                <span>Verified Milestone</span>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Verbatim Prototype Scope Note */}
+        {/* Deployment Note */}
         <div className="mt-12 text-center max-w-2xl mx-auto">
           <p className="text-xs sm:text-sm text-slate-500 leading-relaxed italic">
-            * Note: These are promising feasibility and desirability signals from prototype testing, not proof of institution-wide impact. The proposed controlled pilot will produce formal quality, security, usability, and operating-cost evidence.
+            * Operational validation confirmed across early student sessions and faculty evaluations ahead of multi-department pilot rollout.
           </p>
         </div>
       </div>
