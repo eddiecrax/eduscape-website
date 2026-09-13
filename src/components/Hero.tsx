@@ -107,13 +107,13 @@ export function Hero() {
             <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-slate-900/15 ring-1 ring-slate-200/60">
               <img
                 src={heroImage}
-                alt="MUST Kihumuro Campus, Uganda"
-                className="w-full h-64 sm:h-72 object-cover"
+                alt="Students in lecture session, MUST Uganda"
+                className="w-full h-64 sm:h-72 object-cover object-center"
                 loading="eager"
               />
               <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/60 to-transparent">
                 <p className="text-xs text-white/90 font-medium">
-                  MUST Kihumuro Campus, Uganda
+                  MUST Lecture Hall · Kihumuro Campus, Uganda
                 </p>
               </div>
             </div>

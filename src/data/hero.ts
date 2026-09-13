@@ -30,5 +30,4 @@ export const roadmapTags: string[] = [
   'LMS-Agnostic Architecture',
 ];
 
-export const heroImage: string =
-  'https://images.pexels.com/photos/16086326/pexels-photo-16086326.jpeg?auto=compress&cs=tinysrgb&w=1200';
+export const heroImage: string = '/hero-students.jpg';
