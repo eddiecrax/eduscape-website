@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://eduscapeai.org/sitemap.xml
+Sitemap: https://eduscape-website.pages.dev/sitemap.xml
